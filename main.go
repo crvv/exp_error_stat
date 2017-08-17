@@ -26,13 +26,13 @@ func main() {
 	}
 	defer tx.Rollback()
 	_, err = tx.Exec(`CREATE TABLE error_stat (
-  x NUMERIC(128, 120),
-  freebsd NUMERIC(128, 120),
-  sixth NUMERIC(128, 120),
-  closest NUMERIC(128, 120),
-  asm NUMERIC(128, 120),
-  taylor NUMERIC(128, 120),
-  exact NUMERIC(128, 120)
+  x NUMERIC(24, 20),
+  freebsd NUMERIC(24, 20),
+  sixth NUMERIC(24, 20),
+  closest NUMERIC(24, 20),
+  asm NUMERIC(24, 20),
+  taylor NUMERIC(24, 20),
+  exact NUMERIC(24, 20)
 )`)
 	if err != nil {
 		log.Fatal(err)
