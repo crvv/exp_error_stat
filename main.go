@@ -73,7 +73,6 @@ FROM error_stat`)
 }
 
 func insert(tx *pgx.Tx, x float64) {
-	log.Println(x)
 	sql := "INSERT INTO error_stat (x, freebsd, sixth, closest, asm, taylor) VALUES ($1, $2, $3, $4, $5, $6)"
 	_, err := tx.Exec(sql, x, freebsd(x), sixth(x), closest(x), asm(x), taylor(x))
 	if err != nil {
