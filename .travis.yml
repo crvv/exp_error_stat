@@ -6,4 +6,4 @@ go:
 services:
   - postgresql
 
-script: go run main.go
+script: travis_wait 30 go run main.go
