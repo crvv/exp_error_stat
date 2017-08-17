@@ -10,7 +10,10 @@ var conn *pgx.Conn
 
 func init() {
 	var err error
-	conn, err = pgx.Connect(pgx.ConnConfig{})
+	conn, err = pgx.Connect(pgx.ConnConfig{
+		User: "postgres",
+		Database: "postgres",
+	})
 	if err != nil {
 		log.Fatal(err)
 	}
